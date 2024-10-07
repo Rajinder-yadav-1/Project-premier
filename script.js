@@ -24,3 +24,39 @@ elem.forEach(function(e) {
     img.style.top = (dets.clientY - rect.top) + "px" // adjust the top position
   })
 })
+
+
+
+
+
+
+
+var cursor = document.querySelector(".cursor");
+var main = document.querySelector(".main");
+var img = document.querySelector("video")
+
+var mouseX = 0;
+var mouseY = 0;
+
+// Function to update the cursor position
+function updateCursorPosition() {
+    gsap.to(cursor, {
+        x: mouseX + window.scrollX,
+        y: mouseY + window.scrollY,
+        duration: 0.9, // Duration for smooth effect
+        ease: "back.out(3)",
+    });
+}
+
+// Handle mousemove event
+main.addEventListener("mousemove", function(dets) {
+    mouseX = dets.clientX;
+    mouseY = dets.clientY;
+    updateCursorPosition();
+});
+
+// Handle scroll event
+window.addEventListener("scroll", function() {
+    updateCursorPosition();
+});
+

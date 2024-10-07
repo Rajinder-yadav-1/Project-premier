@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Gilroy;
+   
 }
 
 @font-face {
@@ -19,7 +20,21 @@ html,
 body {
     height: 100%;
     width: 100%;
+    background-color: #F8F8F7;
 }
+
+.cursor{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    z-index: 100;
+    position: absolute;
+
+   
+}
+
+
 
 .main {
     position: relative;
@@ -1001,5 +1016,10 @@ nav h2:nth-last-child(1) {
     .footer-bottom .bottom .copyright {
         font-size: 2.4vw;
     }
-
+.cursor{
+    opacity: 0;
+}
+.main{
+    overflow-x: hidden;
+}
 }
